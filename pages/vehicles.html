@@ -36,27 +36,57 @@
       <p>Chỉ hiển thị xe trống toàn bộ khoảng thời gian bạn chọn. Lọc theo loại, giá, hãng.</p>
     </div>
 
-    <form class="search-bar" style="margin-bottom:28px" action="vehicles.html" method="get">
-      <div class="field">
-        <label>Thành phố</label>
-        <select name="city">
-          <option selected>Đà Nẵng</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Ngày nhận</label>
-        <input type="datetime-local" name="pickup">
-      </div>
-      <div class="field">
-        <label>Ngày trả</label>
-        <input type="datetime-local" name="return">
-      </div>
-      <button type="submit" class="btn btn-primary">Áp dụng</button>
-    </form>
-
     <div class="vehicle-layout">
       <aside class="filter-panel">
         <h3>Bộ lọc</h3>
+        <div class="filter-group filter-dates">
+          <p>Ngày nhận</p>
+          <div class="date-row">
+            <input type="date" name="pickup-date" aria-label="Ngày nhận">
+            <select name="pickup-hour" aria-label="Giờ nhận">
+              <option value="06:00">06:00</option>
+              <option value="07:00">07:00</option>
+              <option value="08:00" selected>08:00</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
+              <option value="19:00">19:00</option>
+              <option value="20:00">20:00</option>
+              <option value="21:00">21:00</option>
+              <option value="22:00">22:00</option>
+            </select>
+          </div>
+          <p>Ngày trả</p>
+          <div class="date-row">
+            <input type="date" name="return-date" aria-label="Ngày trả">
+            <select name="return-hour" aria-label="Giờ trả">
+              <option value="06:00">06:00</option>
+              <option value="07:00">07:00</option>
+              <option value="08:00">08:00</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00" selected>17:00</option>
+              <option value="18:00">18:00</option>
+              <option value="19:00">19:00</option>
+              <option value="20:00">20:00</option>
+              <option value="21:00">21:00</option>
+              <option value="22:00">22:00</option>
+            </select>
+          </div>
+        </div>
         <div class="filter-group">
           <p>Loại xe</p>
           <label><input type="checkbox" name="type" value="xe-may"> Xe máy</label>
@@ -97,7 +127,6 @@
               <p class="price">150.000đ <span>/ ngày</span></p>
               <div class="vehicle-actions">
               <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
-              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
               <a href="../khach-hang/calendar.html?xe=Honda%20Vision%202024" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
             </div>
             </div>
@@ -116,7 +145,6 @@
               <p class="price">160.000đ <span>/ ngày</span></p>
               <div class="vehicle-actions">
               <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
-              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
               <a href="../khach-hang/calendar.html?xe=Yamaha%20Janus%202023" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
             </div>
             </div>
@@ -135,7 +163,6 @@
               <p class="price">180.000đ <span>/ ngày</span></p>
               <div class="vehicle-actions">
               <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
-              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
               <a href="../khach-hang/calendar.html?xe=Honda%20Air%20Blade%20160" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
             </div>
             </div>
@@ -154,7 +181,6 @@
               <p class="price">220.000đ <span>/ ngày</span></p>
               <div class="vehicle-actions">
               <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
-              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
               <a href="../khach-hang/calendar.html?xe=Yamaha%20Exciter%20155" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
             </div>
             </div>
@@ -173,7 +199,6 @@
               <p class="price">180.000đ <span>/ ngày</span></p>
               <div class="vehicle-actions">
               <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
-              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
               <a href="../khach-hang/calendar.html?xe=VinFast%20Feliz%20S" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
             </div>
             </div>
@@ -192,7 +217,6 @@
               <p class="price">280.000đ <span>/ ngày</span></p>
               <div class="vehicle-actions">
               <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
-              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
               <a href="../khach-hang/calendar.html?xe=Honda%20SH%20150i" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
             </div>
             </div>
@@ -212,7 +236,7 @@
 <script src="../js/effects.js"></script>
 <script src="../js/favorites.js"></script>
 <script>
-document.querySelectorAll(".btn-deposit-vrp, .btn-rent-vrp").forEach(function (btn) {
+document.querySelectorAll(".btn-rent-vrp").forEach(function (btn) {
   btn.addEventListener("click", function () {
     const card = btn.closest(".vehicle-card");
     const meta = card.querySelector(".meta").textContent.trim();
@@ -272,7 +296,7 @@ document.querySelectorAll(".btn-deposit-vrp, .btn-rent-vrp").forEach(function (b
     if (window.VRPDataState && area) window.VRPDataState.refresh(area);
   }
 
-  panel.querySelectorAll("input").forEach(function (input) {
+  panel.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(function (input) {
     input.addEventListener("change", applyFilters);
   });
 })();

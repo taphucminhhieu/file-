@@ -60,12 +60,6 @@
 
       <form class="search-bar search-bar-pro" action="pages/vehicles.html" method="get">
         <div class="field">
-          <label for="city">Thành phố</label>
-          <select id="city" name="city">
-            <option value="da-nang" selected>Đà Nẵng</option>
-          </select>
-        </div>
-        <div class="field">
           <label for="pickup">Ngày giờ nhận</label>
           <input type="datetime-local" id="pickup" name="pickup">
         </div>
@@ -412,7 +406,7 @@
 <script src="js/effects.js"></script>
 <script src="js/favorites.js"></script>
 <script>
-document.querySelectorAll(".btn-deposit-vrp, .btn-rent-vrp").forEach(function (btn) {
+document.querySelectorAll(".btn-rent-vrp").forEach(function (btn) {
   btn.addEventListener("click", function () {
     const card = btn.closest(".vehicle-card");
     const meta = card.querySelector(".meta").textContent.trim();
