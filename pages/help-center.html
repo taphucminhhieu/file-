@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trung tâm trợ giúp · VRP-GO</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+    .help-card {
+      background: var(--white); border-radius: var(--radius); padding: 22px;
+      box-shadow: var(--shadow-card); border: 1px solid rgba(226,235,230,0.8);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .help-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .help-card .ic {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+      display: grid; place-items: center; font-size: 22px; margin-bottom: 14px;
+    }
+    .help-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+    .help-card p { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 12px; }
+    .help-card a { font-size: 13.5px; font-weight: 600; color: var(--primary); }
+    .contact-box {
+      margin-top: 28px; padding: 24px; border-radius: var(--radius);
+      background: linear-gradient(135deg, #0d4a38, #079b70); color: #fff;
+      display: grid; grid-template-columns: 1.2fr auto; gap: 20px; align-items: center;
+    }
+    .contact-box h3 { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+    .contact-box p { opacity: 0.85; font-size: 14px; }
+    @media (max-width: 900px) {
+      .help-grid { grid-template-columns: 1fr; }
+      .contact-box { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header class="header">
+  <div class="container header-container">
+    <a href="../index.html" class="logo"><span class="logo-mark" aria-hidden="true"><img src="../assets/logo-vrp.png" alt=""></span><span class="logo-text"><span class="vrp">VRP</span><span class="go">-GO</span></span></a>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="../index.html">Trang chủ</a></li>
+        <li><a href="../pages/vehicles.html">Thuê xe</a></li>
+        <li><a href="../pages/how-it-works.html">Cách hoạt động</a></li>
+        <li><a href="../pages/my-orders.html">Đơn của tôi</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-login">Đăng nhập</a>
+      <a href="register.html" class="btn btn-register">Đăng ký</a>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+    <div class="page-head">
+      <p class="breadcrumb"><a href="../index.html">Trang chủ</a> / Hỗ trợ / Trung tâm trợ giúp</p>
+      <h1>Trung tâm trợ giúp</h1>
+      <p>Hướng dẫn đặt xe, giao nhận, thanh toán và xử lý sự cố trên VRP-GO.</p>
+    </div>
+
+    <div class="help-grid">
+      <div class="help-card">
+        <div class="ic">🔍</div>
+        <h3>Đặt xe & giữ chỗ</h3>
+        <p>Chọn thành phố, ngày giờ, giữ chỗ 30 phút và thanh toán cọc online.</p>
+        <a href="how-it-works.html">Xem quy trình →</a>
+      </div>
+      <div class="help-card">
+        <div class="ic">📄</div>
+        <h3>Chính sách thuê xe</h3>
+        <p>Cọc, hủy đơn, phí phát sinh, trách nhiệm khách và cửa hàng.</p>
+        <a href="rental-policy.html">Đọc chính sách →</a>
+      </div>
+      <div class="help-card">
+        <div class="ic">❓</div>
+        <h3>Câu hỏi thường gặp</h3>
+        <p>Giấy tờ cần mang, thời gian xác nhận, hoàn cọc, khiếu nại 48h.</p>
+        <a href="faq.html">Xem FAQ →</a>
+      </div>
+      <div class="help-card">
+        <div class="ic">📷</div>
+        <h3>Giao & nhận xe</h3>
+        <p>Biên bản 6 góc ảnh, số km, mức xăng — giảm tranh chấp.</p>
+        <a href="how-it-works.html">Chi tiết quy trình →</a>
+      </div>
+      <div class="help-card">
+        <div class="ic">💳</div>
+        <h3>Thanh toán & hoàn tiền</h3>
+        <p>Cọc online, tất toán cuối chuyến, hoàn cọc theo chính sách hủy.</p>
+        <a href="rental-policy.html#huy">Xem mục hủy →</a>
+      </div>
+      <div class="help-card">
+        <div class="ic">🛡️</div>
+        <h3>Khiếu nại</h3>
+        <p>Mở khiếu nại trong 48 giờ kèm ảnh; vận hành viên xem full hồ sơ.</p>
+        <a href="../operator/complaints.html">Tới trang khiếu nại →</a>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <div>
+        <h3>Vẫn cần hỗ trợ?</h3>
+        <p>Hotline <strong>1900 1234</strong> (8:00–22:00) · Email <strong>hello@vrpgo.vn</strong></p>
+      </div>
+      <a href="mailto:hello@vrpgo.vn" class="btn btn-white">Gửi email</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="logo"><span class="logo-mark" aria-hidden="true"><img src="../assets/logo-vrp.png" alt=""></span><span class="logo-text"><span class="vrp">VRP</span><span class="go">-GO</span></span></a>
+        <p class="footer-about">Nền tảng thuê xe máy đáng tin cậy.</p>
+      </div>
+      <div>
+        <h4>Hỗ trợ</h4>
+        <a href="help-center.html">Trung tâm trợ giúp</a>
+        <a href="rental-policy.html">Chính sách thuê xe</a>
+        <a href="faq.html">Câu hỏi thường gặp</a>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <p class="footer-contact">hello@vrpgo.vn</p>
+        <p class="footer-contact">1900 1234</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 VRP-GO</div>
+  </div>
+</footer>
+<script src="../js/effects.js"></script>
+</body>
+</html>

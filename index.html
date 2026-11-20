@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VRP-GO – Thuê xe máy Đà Nẵng</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-container">
+    <a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true"><img src="assets/logo-vrp.png" alt=""></span><span class="logo-text"><span class="vrp">VRP</span><span class="go">-GO</span></span></a>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="index.html" class="active">Trang chủ</a></li>
+        <li><a href="pages/vehicles.html">Thuê xe</a></li>
+        <li><a href="pages/how-it-works.html">Cách hoạt động</a></li>
+        <li><a href="pages/my-orders.html">Đơn của tôi</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="pages/login.html" class="btn btn-login">Đăng nhập</a>
+      <a href="pages/register.html" class="btn btn-register">Đăng ký</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO + SEARCH (Carmatch-style: lịch + tìm xe nổi bật) -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-block">
+        <div>
+          <span class="hero-label">THUÊ XE MÁY DU LỊCH</span>
+          <h1>Thuê xe máy Đà Nẵng<br><span>giữ chỗ 30 phút, giá rõ trước khi đặt</span></h1>
+          <p class="hero-desc">
+            Chọn ngày nhận/trả, xem xe còn trống và tổng chi phí dự kiến.
+            Đặt cọc online · Biên bản giao nhận có ảnh · Hỗ trợ khiếu nại 48h.
+          </p>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-slide active" src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=85" alt="Xe 1">
+          <img class="hero-slide" src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1200&q=85" alt="Xe 2">
+          <img class="hero-slide" src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=1200&q=85" alt="Xe 3">
+          <img class="hero-slide" src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?auto=format&fit=crop&w=1200&q=85" alt="Xe 4">
+          <div class="hero-dots">
+            <button type="button" class="hero-dot active" data-index="0" aria-label="1"></button>
+            <button type="button" class="hero-dot" data-index="1" aria-label="2"></button>
+            <button type="button" class="hero-dot" data-index="2" aria-label="3"></button>
+            <button type="button" class="hero-dot" data-index="3" aria-label="4"></button>
+          </div>
+        </div>
+      </div>
+
+      <form class="search-bar search-bar-pro" action="pages/vehicles.html" method="get">
+        <div class="field">
+          <label for="city">Thành phố</label>
+          <select id="city" name="city">
+            <option value="da-nang" selected>Đà Nẵng</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="pickup">Ngày giờ nhận</label>
+          <input type="datetime-local" id="pickup" name="pickup">
+        </div>
+        <div class="field">
+          <label for="return">Ngày giờ trả</label>
+          <input type="datetime-local" id="return" name="return">
+        </div>
+        <button type="submit" class="btn btn-primary">Tìm xe phù hợp</button>
+      </form>
+      <p class="search-hint">Tổng giá &amp; xe trống hiển thị sau khi chọn lịch · <a href="pages/faq.html">Chưa chắc? Xem FAQ</a></p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-strip">
+    <div class="container stats-grid">
+      <div class="stat-card"><strong>30+</strong><span>Cửa hàng đối tác</span></div>
+      <div class="stat-card"><strong>400+</strong><span>Xe sẵn sàng</span></div>
+      <div class="stat-card clickable" onclick="location.href='pages/reviews.html'"><strong>4.8/5</strong><span>Đánh giá khách</span></div>
+      <div class="stat-card"><strong>&lt;5 phút</strong><span>Đặt giữ chỗ</span></div>
+    </div>
+  </section>
+
+  <!-- QUICK INFO TABLE (Carmatch "Thông tin cần biết") -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">THÔNG TIN NHANH</p>
+      <h2 class="section-title">Thuê xe máy trên VRP-GO cần biết gì?</h2>
+      <div class="info-table card">
+        <div class="info-row"><strong>Giá thuê</strong><span>Từ 150.000đ/ngày · tùy mẫu, lịch và điểm giao nhận</span></div>
+        <div class="info-row"><strong>Khu vực</strong><span>Đà Nẵng · giao nhận trong nội thành</span></div>
+        <div class="info-row"><strong>Giấy tờ</strong><span>GPLX đúng hạng + CCCD/hộ chiếu khi nhận xe</span></div>
+        <div class="info-row"><strong>Đặt cọc</strong><span>Cọc online giữ chỗ 30 phút · hoàn theo <a href="pages/rental-policy.html#huy">chính sách hủy</a></span></div>
+        <div class="info-row"><strong>Bàn giao</strong><span>6 góc ảnh + số km + mức xăng · giảm tranh chấp</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED FLEET -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head-row">
+        <div>
+          <p class="section-label">GỢI Ý XE</p>
+          <h2 class="section-title">Chọn xe theo nhu cầu</h2>
+        </div>
+        <a href="pages/vehicles.html" class="btn btn-outline">Xem toàn bộ đội xe →</a>
+      </div>
+      <div class="vehicles-grid"
+        data-data-area data-skeleton="cards" data-skeleton-count="4"
+        data-item=".vehicle-card"
+        data-empty-icon="🏍️"
+        data-empty-title="Chưa có xe phù hợp"
+        data-empty-text="Đội xe đang được cập nhật. Vui lòng quay lại sau ít phút.">
+        <article class="vehicle-card">
+          <div class="thumb">
+            <span class="badge-avail">Có thể thuê</span>
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80" alt="Vision">
+          </div>
+          <div class="body">
+            <p class="type">Tay ga · Phố</p>
+            <h3>Honda Vision 2024</h3>
+            <div class="meta">★ 4.9 · Đà Nẵng</div>
+            <div class="price">150.000đ <small>/ ngày</small></div>
+            <div class="vehicle-actions">
+              <a href="pages/vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="khach-hang/calendar.html?xe=Honda%20Vision%202024" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="thumb">
+            <span class="badge-avail">Có thể thuê</span>
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80" alt="Exciter">
+          </div>
+          <div class="body">
+            <p class="type">Côn tay · Tour</p>
+            <h3>Yamaha Exciter 155</h3>
+            <div class="meta">★ 4.8 · Đà Nẵng</div>
+            <div class="price">220.000đ <small>/ ngày</small></div>
+            <div class="vehicle-actions">
+              <a href="pages/vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="khach-hang/calendar.html?xe=Yamaha%20Exciter%20155" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="thumb">
+            <span class="badge-avail badge-hot">Sắp hết chỗ</span>
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=800&q=80" alt="SH">
+          </div>
+          <div class="body">
+            <p class="type">Tay ga cao cấp</p>
+            <h3>Honda SH Mode 125</h3>
+            <div class="meta">★ 4.9 · Đà Nẵng</div>
+            <div class="price">200.000đ <small>/ ngày</small></div>
+            <div class="vehicle-actions">
+              <a href="pages/vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="khach-hang/calendar.html?xe=Honda%20SH%20Mode%20125" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="thumb">
+            <span class="badge-avail">Có thể thuê</span>
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80" alt="Feliz">
+          </div>
+          <div class="body">
+            <p class="type">Xe điện</p>
+            <h3>VinFast Feliz S</h3>
+            <div class="meta">★ 4.7 · Đà Nẵng</div>
+            <div class="price">180.000đ <small>/ ngày</small></div>
+            <div class="vehicle-actions">
+              <a href="pages/vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="khach-hang/calendar.html?xe=VinFast%20Feliz%20S" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="thumb">
+            <span class="badge-avail">Có thể thuê</span>
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?auto=format&fit=crop&w=800&q=80" alt="Winner">
+          </div>
+          <div class="body">
+            <p class="type">Côn tay</p>
+            <h3>Honda Winner X</h3>
+            <div class="meta">★ 4.8 · Đà Nẵng</div>
+            <div class="price">210.000đ <small>/ ngày</small></div>
+            <div class="vehicle-actions">
+              <a href="pages/vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="khach-hang/calendar.html?xe=Honda%20Winner%20X" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="thumb">
+            <span class="badge-avail">Có thể thuê</span>
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?auto=format&fit=crop&w=800&q=80" alt="Janus">
+          </div>
+          <div class="body">
+            <p class="type">Tay ga · Nữ</p>
+            <h3>Yamaha Janus 2023</h3>
+            <div class="meta">★ 4.6 · Đà Nẵng</div>
+            <div class="price">160.000đ <small>/ ngày</small></div>
+            <div class="vehicle-actions">
+              <a href="pages/vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="khach-hang/calendar.html?xe=Yamaha%20Janus%202023" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="thumb">
+            <span class="badge-avail">Có thể thuê</span>
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80" alt="Lead">
+          </div>
+          <div class="body">
+            <p class="type">Tay ga · Cốp rộng</p>
+            <h3>Honda Lead 125</h3>
+            <div class="meta">★ 4.7 · Đà Nẵng</div>
+            <div class="price">155.000đ <small>/ ngày</small></div>
+            <div class="vehicle-actions">
+              <a href="pages/vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="khach-hang/calendar.html?xe=Honda%20Lead%20125" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="thumb">
+            <span class="badge-avail badge-hot">Sắp hết chỗ</span>
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80" alt="SH150">
+          </div>
+          <div class="body">
+            <p class="type">Tay ga cao cấp</p>
+            <h3>Honda SH 150i</h3>
+            <div class="meta">★ 5.0 · Đà Nẵng</div>
+            <div class="price">280.000đ <small>/ ngày</small></div>
+            <div class="vehicle-actions">
+              <a href="pages/vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="khach-hang/calendar.html?xe=Honda%20SH%20150i" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE BY NEED -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">BẢNG GIÁ THAM KHẢO</p>
+      <h2 class="section-title">Giá theo nhu cầu chuyến đi</h2>
+      <div class="price-need-grid">
+        <div class="card price-need">
+          <h3>Xe tay ga phố</h3>
+          <p class="pn-price">Từ 150.000đ/ngày</p>
+          <p>Vision, Janus, Lead — đi biển, phố, khách sạn.</p>
+          <a href="pages/vehicles.html">Xem xe tay ga →</a>
+        </div>
+        <div class="card price-need">
+          <h3>Xe côn / thể thao</h3>
+          <p class="pn-price">Từ 210.000đ/ngày</p>
+          <p>Exciter, Winner — cung đường dài, phượt nhẹ.</p>
+          <a href="pages/vehicles.html">Xem xe côn →</a>
+        </div>
+        <div class="card price-need">
+          <h3>Xe điện</h3>
+          <p class="pn-price">Từ 180.000đ/ngày</p>
+          <p>Feliz, Klara — êm, chi phí sạc thấp trong thành phố.</p>
+          <a href="pages/vehicles.html">Xem xe điện →</a>
+        </div>
+        <div class="card price-need">
+          <h3>Giao tận nơi / sân bay</h3>
+          <p class="pn-price">+50k – 80k</p>
+          <p>Phí giao nhận xác nhận theo lịch trước khi giữ chỗ.</p>
+          <a href="pages/rental-policy.html">Xem chính sách →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 STEPS -->
+  <section class="section section-alt">
+    <div class="container">
+      <p class="section-label">QUY TRÌNH</p>
+      <h2 class="section-title">Đặt xe trong 3 bước</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3>Chọn xe và lịch thuê</h3>
+          <p>Xem mẫu xe, ngày nhận/trả và tổng giá dự kiến trên web.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3>Đặt cọc &amp; giữ chỗ 30 phút</h3>
+          <p>Thanh toán cọc online. Cửa hàng xác nhận trong 15 phút.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3>Nhận xe &amp; ký biên bản</h3>
+          <p>Đối chiếu giấy tờ, chụp 6 góc ảnh, km và xăng khi bàn giao.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:22px">
+        <a href="pages/how-it-works.html" class="btn btn-outline">Xem chi tiết quy trình</a>
+        <a href="pages/vehicles.html" class="btn btn-primary" style="margin-left:8px">Chọn xe ngay</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">KHU VỰC</p>
+      <h2 class="section-title">Điểm nhận xe phổ biến</h2>
+      <div class="area-grid">
+        <div class="area-chip">✈️ Đà Nẵng · Sân bay</div>
+        <div class="area-chip">🌊 Đà Nẵng · Mỹ Khê</div>
+        <div class="area-chip">🏛️ Đà Nẵng · Hải Châu</div>
+        <div class="area-chip">📍 Giao khách sạn (phí +)</div>
+      </div>
+      <p class="muted-note">Điểm hẹn và phí giao nhận được xác nhận theo xe và lịch thuê.</p>
+    </div>
+  </section>
+
+  <!-- FAQ HOME -->
+  <section class="section section-alt">
+    <div class="container">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">Câu hỏi thường gặp</h2>
+      <div class="faq-home">
+        <details class="faq" open>
+          <summary>Thuê xe máy VRP-GO giá bao nhiêu?</summary>
+          <div class="ans">Từ khoảng 150.000đ/ngày tùy mẫu. Chọn ngày nhận/trả để xem tổng giá dự kiến (thuê + cọc + giao nhận nếu có).</div>
+        </details>
+        <details class="faq">
+          <summary>Có giao xe tận khách sạn / sân bay không?</summary>
+          <div class="ans">Có. Phí giao tận nơi khoảng 50.000đ, sân bay/ga khoảng 80.000đ — xác nhận trên form đặt trước khi giữ chỗ.</div>
+        </details>
+        <details class="faq">
+          <summary>Cần mang giấy tờ gì?</summary>
+          <div class="ans">GPLX đúng hạng và CCCD/hộ chiếu. Hai bên kiểm tra xe, km, xăng khi bàn giao.</div>
+        </details>
+        <details class="faq">
+          <summary>Hủy đơn có hoàn cọc không?</summary>
+          <div class="ans">Hủy ≥ 24h: hoàn 100% cọc. 6–24h: hoàn một phần. &lt; 6h: có thể mất cọc. Chi tiết tại chính sách thuê xe.</div>
+        </details>
+      </div>
+      <p style="margin-top:16px"><a href="pages/faq.html" style="color:var(--primary);font-weight:600">Xem thêm FAQ →</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true"><img src="assets/logo-vrp.png" alt=""></span><span class="logo-text"><span class="vrp">VRP</span><span class="go">-GO</span></span></a>
+        <p class="footer-about">Nền tảng thuê xe máy đáng tin cậy — Đà Nẵng.</p>
+        <div class="socials">
+          <a href="#" class="social-fb" title="Facebook">f</a>
+          <a href="#" class="social-tt" title="TikTok">♪</a>
+          <a href="#" class="social-zalo" title="Zalo">Zalo</a>
+        </div>
+      </div>
+      <div>
+        <h4>Khám phá</h4>
+        <a href="pages/vehicles.html">Thuê xe</a>
+        <a href="pages/how-it-works.html">Cách hoạt động</a>
+        <a href="pages/reviews.html">Đánh giá</a>
+      </div>
+      <div>
+        <h4>Hỗ trợ</h4>
+        <a href="pages/help-center.html">Trung tâm trợ giúp</a>
+        <a href="pages/rental-policy.html">Chính sách thuê xe</a>
+        <a href="pages/faq.html">Câu hỏi thường gặp</a>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <p class="footer-contact">hello@vrpgo.vn</p>
+        <p class="footer-contact">1900 1234</p>
+        <p class="footer-contact">07:00–22:00 hằng ngày</p>
+      </div>
+      <div>
+        <h4>Địa chỉ</h4>
+        <p class="footer-address">Cửa hàng VRP-GO · 22/4 Lê Đình Dương, Phường Hải Châu 1, Quận Hải Châu, Đà Nẵng</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 VRP-GO · Vehicle Rental Platform MVP</div>
+  </div>
+</footer>
+
+<!-- Floating Zalo-style CTA -->
+<a href="pages/help-center.html" class="float-support" title="Hỗ trợ">💬 Hỗ trợ</a>
+
+<script src="js/effects.js"></script>
+<script src="js/favorites.js"></script>
+<script>
+document.querySelectorAll(".btn-deposit-vrp, .btn-rent-vrp").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    const card = btn.closest(".vehicle-card");
+    const meta = card.querySelector(".meta").textContent.trim();
+    sessionStorage.setItem("selectedVehicleName", card.querySelector("h3").textContent.trim());
+    sessionStorage.setItem("selectedVehicleType", card.querySelector(".type").textContent.trim());
+    sessionStorage.setItem("selectedVehicleRating", meta);
+    sessionStorage.setItem("selectedVehicleSpecs", meta);
+    sessionStorage.setItem("selectedVehiclePrice", card.querySelector(".price").textContent.trim());
+    sessionStorage.setItem("selectedVehicleImage", card.querySelector("img").src);
+  });
+});
+</script>
+</body>
+</html>

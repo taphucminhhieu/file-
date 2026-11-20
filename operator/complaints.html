@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xử lý khiếu nại · VRP-GO</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-container">
+    <a href="../index.html" class="logo"><span class="logo-mark" aria-hidden="true"><img src="../assets/logo-vrp.png" alt=""></span><span class="logo-text"><span class="vrp">VRP</span><span class="go">-GO</span></span></a>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="../index.html">Trang chủ</a></li>
+        <li><a href="../pages/vehicles.html">Thuê xe</a></li>
+        <li><a href="../pages/how-it-works.html">Cách hoạt động</a></li>
+        <li><a href="../pages/my-orders.html">Đơn của tôi</a></li>
+      </ul>
+    </nav>
+    <div class="header-user"><div class="avatar">VH</div><span class="user-name">Vận hành</span></div>
+  </div>
+</header>
+<main class="main">
+  <div class="container">
+    <div class="page-head" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <div>
+        <h1>Xử lý khiếu nại</h1>
+        <p>Xem hồ sơ đơn · Ghi kết luận</p>
+      </div>
+      <div style="display:flex;gap:10px">
+        <div class="stat-card" style="min-width:80px;padding:12px 16px"><strong style="font-size:20px">2</strong><span>Đang mở</span></div>
+        <div class="stat-card" style="min-width:80px;padding:12px 16px"><strong style="font-size:20px">2</strong><span>Đang xử lý</span></div>
+        <div class="stat-card" style="min-width:80px;padding:12px 16px"><strong style="font-size:20px">2</strong><span>Đã đóng</span></div>
+      </div>
+    </div>
+
+    <div class="op-layout">
+      <div class="kn-wrap"
+        data-data-area data-target=".kn-list" data-skeleton="rows" data-skeleton-count="4"
+        data-item=".kn-item"
+        data-empty-icon="📋"
+        data-empty-title="Chưa có khiếu nại nào"
+        data-empty-text="Khiếu nại mới sẽ xuất hiện tại đây để vận hành viên xử lý.">
+      <div class="kn-list card">
+        <div class="kn-item active" data-id="0">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="kn-id">🧾 KN-20261113</span>
+            <span class="badge badge-open">Đang mở</span>
+          </div>
+          <div class="kn-title">Phí trả muộn tính không đúng</div>
+          <div class="kn-meta">DH-20261113-001 · Nguyễn Văn An</div>
+        </div>
+        <div class="kn-item" data-id="1">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="kn-id">📷 KN-20261112</span>
+            <span class="badge badge-progress">Đang xử lý</span>
+          </div>
+          <div class="kn-title">Xe giao bị xước, không khớp ảnh</div>
+          <div class="kn-meta">DH-20261110-008 · Trần Thị Bình</div>
+        </div>
+        <div class="kn-item" data-id="2">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="kn-id">⛽ KN-20261111</span>
+            <span class="badge badge-open">Đang mở</span>
+          </div>
+          <div class="kn-title">Mức xăng lúc trả không khớp biên bản</div>
+          <div class="kn-meta">DH-20261109-014 · Đỗ Minh</div>
+        </div>
+        <div class="kn-item" data-id="3">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="kn-id">⏱️ KN-20261110</span>
+            <span class="badge badge-progress">Đang xử lý</span>
+          </div>
+          <div class="kn-title">Cửa hàng xác nhận chậm hơn 15 phút</div>
+          <div class="kn-meta">DH-20261110-002 · Ngô Lan</div>
+        </div>
+        <div class="kn-item" data-id="4">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="kn-id">💸 KN-20261108</span>
+            <span class="badge badge-done">Đã đóng</span>
+          </div>
+          <div class="kn-title">Hoàn tiền hủy đơn trước 24h</div>
+          <div class="kn-meta">DH-20261105-003 · Lê Minh Cường</div>
+        </div>
+        <div class="kn-item" data-id="5">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="kn-id">🔧 KN-20261104</span>
+            <span class="badge badge-done">Đã đóng</span>
+          </div>
+          <div class="kn-title">Xe hỏng giữa hành trình, yêu cầu đổi xe</div>
+          <div class="kn-meta">DH-20261102-011 · Hoàng Yến</div>
+        </div>
+      </div>
+      </div>
+
+      <div class="detail-panel card" id="detail-panel">
+        <div class="empty-detail" id="empty-state">
+          <div class="icon-wrap">📋</div>
+          <h3 style="font-size:18px;font-weight:800;color:var(--primary-dark);margin-bottom:8px">Chọn một khiếu nại</h3>
+          <p style="color:var(--muted);max-width:280px">Xem biên bản giao/nhận, thanh toán và ghi kết luận xử lý.</p>
+        </div>
+        <div class="detail-content" id="detail-content" hidden></div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container footer-bottom">© 2026 VRP-GO · Vehicle Rental Platform</div>
+</footer>
+<script src="../js/effects.js"></script>
+<script>
+const DATA = [
+  {
+    id: "KN-20261113",
+    title: "Phí trả muộn tính không đúng",
+    status: "Đang mở", badge: "badge-open",
+    order: "DH-20261113-001", customer: "Nguyễn Văn An", phone: "0901 234 567",
+    vehicle: "Honda Air Blade 160 · 51G1-23456",
+    reason: "Khách trả xe đúng giờ nhưng hệ thống tính phí muộn 2 giờ. Yêu cầu hoàn 80.000đ.",
+    deposit: "500.000đ", paid: "360.000đ",
+    conclusion: ""
+  },
+  {
+    id: "KN-20261112",
+    title: "Xe giao bị xước, không khớp ảnh",
+    status: "Đang xử lý", badge: "badge-progress",
+    order: "DH-20261110-008", customer: "Trần Thị Bình", phone: "0912 888 333",
+    vehicle: "Yamaha Exciter 155 · 51G1-77889",
+    reason: "Ảnh giao xe không thấy xước gương, khi nhận có vết xước. Khách từ chối chịu phí.",
+    deposit: "700.000đ", paid: "440.000đ",
+    conclusion: "Đang đối chiếu ảnh giao/nhận với cửa hàng."
+  },
+  {
+    id: "KN-20261111",
+    title: "Mức xăng lúc trả không khớp biên bản",
+    status: "Đang mở", badge: "badge-open",
+    order: "DH-20261109-014", customer: "Đỗ Minh", phone: "0933 456 789",
+    vehicle: "Honda Vision 2024 · 51G1-11223",
+    reason: "Biên bản giao ghi đầy bình, trả xe còn 1/2 nhưng cửa hàng tính phí đổ xăng đầy.",
+    deposit: "450.000đ", paid: "300.000đ",
+    conclusion: ""
+  },
+  {
+    id: "KN-20261110",
+    title: "Cửa hàng xác nhận chậm hơn 15 phút",
+    status: "Đang xử lý", badge: "badge-progress",
+    order: "DH-20261110-002", customer: "Ngô Lan", phone: "0977 222 111",
+    vehicle: "Yamaha Janus · 51G1-33445",
+    reason: "Đã thanh toán cọc nhưng cửa hàng xác nhận sau 22 phút, khách suýt lỡ lịch trình.",
+    deposit: "400.000đ", paid: "320.000đ",
+    conclusion: "Đã nhắc cửa hàng; đang xem xét voucher 50k cho khách."
+  },
+  {
+    id: "KN-20261108",
+    title: "Hoàn tiền hủy đơn trước 24h",
+    status: "Đã đóng", badge: "badge-done",
+    order: "DH-20261105-003", customer: "Lê Minh Cường", phone: "0987 111 222",
+    vehicle: "Honda Vision · 51G1-11223",
+    reason: "Hủy trước 24h theo chính sách, chưa nhận hoàn cọc.",
+    deposit: "400.000đ", paid: "0đ",
+    conclusion: "Đã hoàn 100% cọc qua cổng thanh toán. Đóng case."
+  },
+  {
+    id: "KN-20261104",
+    title: "Xe hỏng giữa hành trình, yêu cầu đổi xe",
+    status: "Đã đóng", badge: "badge-done",
+    order: "DH-20261102-011", customer: "Hoàng Yến", phone: "0909 888 777",
+    vehicle: "Honda Lead 125 · 51G1-66778",
+    reason: "Xe chết máy trên đường. Cửa hàng đã đổi xe trong 40 phút nhưng khách muốn giảm 1 ngày thuê.",
+    deposit: "400.000đ", paid: "310.000đ",
+    conclusion: "Đã giảm 50% ngày sự cố. Khách đồng ý, đóng case."
+  }
+];
+
+const items = document.querySelectorAll(".kn-item");
+const empty = document.getElementById("empty-state");
+const content = document.getElementById("detail-content");
+
+function renderDetail(d) {
+  content.hidden = false;
+  empty.hidden = true;
+  content.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+      <div>
+        <div style="font-size:12px;font-weight:700;color:var(--primary);margin-bottom:4px">${d.id}</div>
+        <h2>${d.title}</h2>
+        <span class="badge ${d.badge}">${d.status}</span>
+      </div>
+      <div style="font-size:28px">🧾</div>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-box"><label>Mã đơn</label><p>${d.order}</p></div>
+      <div class="detail-box"><label>Khách hàng</label><p>${d.customer}</p></div>
+      <div class="detail-box"><label>Số điện thoại</label><p>${d.phone}</p></div>
+      <div class="detail-box"><label>Xe</label><p>${d.vehicle}</p></div>
+      <div class="detail-box"><label>Tiền cọc</label><p>${d.deposit}</p></div>
+      <div class="detail-box"><label>Đã thanh toán</label><p>${d.paid}</p></div>
+    </div>
+    <div class="detail-box" style="margin-bottom:12px">
+      <label>Nội dung khiếu nại</label>
+      <p style="font-weight:500;line-height:1.55">${d.reason}</p>
+    </div>
+    <div class="conclusion-box">
+      <label style="font-size:13px;font-weight:700;display:block;margin-bottom:8px">Kết luận xử lý</label>
+      <textarea id="conclusion" placeholder="Ghi kết luận, số tiền hoàn/phạt nếu có...">${d.conclusion || ""}</textarea>
+      <div class="conclusion-actions">
+        <button class="btn btn-primary" onclick="showToast('Đã lưu kết luận · ${d.id}')">Lưu kết luận</button>
+        <button class="btn btn-ghost" onclick="showToast('Đã đóng khiếu nại')">Đóng case</button>
+        <button class="btn btn-outline" onclick="showToast('Đã chuyển cửa hàng')">Chuyển CH</button>
+      </div>
+    </div>
+  `;
+  // re-trigger animation
+  content.style.animation = "none";
+  content.offsetHeight;
+  content.style.animation = "";
+}
+
+items.forEach((el) => {
+  el.addEventListener("click", () => {
+    items.forEach((i) => i.classList.remove("active"));
+    el.classList.add("active");
+    const id = Number(el.dataset.id);
+    renderDetail(DATA[id]);
+  });
+});
+
+// Auto open first
+renderDetail(DATA[0]);
+</script>
+</body>
+</html>

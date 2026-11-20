@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạo đơn thuê · VRP-GO</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .hold-banner {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 1px solid #f6e05e;
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hold-banner strong { color: #92400e; }
+    .hold-banner p { color: #a16207; font-size: 13px; margin: 0; }
+    #countdown { font-weight: 800; font-variant-numeric: tabular-nums; color: #78350f; }
+    .hold-bar-wrap { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: rgba(146,64,14,0.15); }
+    .hold-bar { height: 100%; width: 100%; background: #d69e2e; transition: width 1s linear; }
+    .order-layout { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; }
+    .delivery-card { display: block; border: 1.5px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 10px; cursor: pointer; transition: 0.2s; }
+    .delivery-card:has(input:checked) { border-color: var(--primary); background: #f0fdf7; }
+    .delivery-card input { margin-right: 10px; }
+    @media (max-width: 900px) { .order-layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<header class="header">
+  <div class="container header-container">
+    <a href="../index.html" class="logo"><span class="logo-mark" aria-hidden="true"><img src="../assets/logo-vrp.png" alt=""></span><span class="logo-text"><span class="vrp">VRP</span><span class="go">-GO</span></span></a>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="../index.html">Trang chủ</a></li>
+        <li><a href="../pages/vehicles.html">Thuê xe</a></li>
+        <li><a href="../pages/how-it-works.html">Cách hoạt động</a></li>
+        <li><a href="../pages/my-orders.html">Đơn của tôi</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-login">Đăng nhập</a>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container order-layout">
+    <div>
+      <div class="hold-banner">
+        <span style="font-size:24px">⏱</span>
+        <div>
+          <strong>Đang giữ chỗ</strong>
+          <p>Hoàn tất trong <span id="countdown">10:00</span> — hết giờ đơn tự hủy, xe mở lại.</p>
+        </div>
+        <div class="hold-bar-wrap"><div class="hold-bar" id="hold-bar"></div></div>
+      </div>
+
+      <div class="card" style="margin-bottom:16px">
+        <div style="display:flex;gap:14px;align-items:center">
+          <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=160&q=80" alt="" style="width:72px;height:54px;object-fit:cover;border-radius:10px">
+          <div>
+            <strong>Honda Vision 2024</strong>
+            <p style="font-size:13px;color:var(--muted);margin:0">13/11 09:00 → 15/11 09:00 · 2 ngày</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:16px">
+        <h3 style="margin-bottom:12px">Hình thức giao nhận</h3>
+        <label class="delivery-card"><input type="radio" name="d" value="self" checked> Tự đến cửa hàng · Miễn phí</label>
+        <label class="delivery-card"><input type="radio" name="d" value="delivery"> Giao tận nơi · +50.000đ</label>
+        <label class="delivery-card"><input type="radio" name="d" value="airport"> Sân bay / ga · +80.000đ</label>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom:12px">Thông tin liên hệ</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div>
+            <label style="font-size:12px;font-weight:600">Họ tên *</label>
+            <input type="text" placeholder="Nguyễn Văn A" style="width:100%;padding:11px;border:1px solid var(--border);border-radius:10px;margin-top:4px">
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:600">SĐT *</label>
+            <input type="tel" placeholder="0901 234 567" style="width:100%;padding:11px;border:1px solid var(--border);border-radius:10px;margin-top:4px">
+          </div>
+        </div>
+        <div style="margin-top:12px">
+          <label style="font-size:12px;font-weight:600">Ghi chú</label>
+          <textarea rows="2" placeholder="Yêu cầu đặc biệt..." style="width:100%;padding:11px;border:1px solid var(--border);border-radius:10px;margin-top:4px;resize:vertical"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="card" style="position:sticky;top:84px">
+        <h3 style="margin-bottom:14px">Bảng chi phí</h3>
+        <div style="font-size:13.5px;color:var(--muted)">
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span>Thuê 2 ngày</span><strong style="color:var(--text)">300.000đ</strong></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span>Phí dịch vụ</span><strong style="color:var(--text)">15.000đ</strong></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span>Bảo hiểm</span><strong style="color:var(--text)">30.000đ</strong></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span>Cọc 30%</span><strong style="color:var(--text)">103.500đ</strong></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px dashed #d1e5dc;margin-top:8px;font-weight:700">
+          <span>Tổng</span><strong style="color:var(--primary);font-size:18px">345.000đ</strong>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" id="btn-pay" style="margin-top:12px">Thanh toán cọc</button>
+        <a href="vehicle-detail.html" class="btn btn-ghost btn-block" style="margin-top:8px">← Quay lại</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer"><div class="container footer-bottom">© 2026 VRP-GO</div></footer>
+<script src="../js/effects.js"></script>
+<script>
+  let sec = 10 * 60;
+  const el = document.getElementById("countdown");
+  const bar = document.getElementById("hold-bar");
+  const total = sec;
+  setInterval(() => {
+    if (sec <= 0) { el.textContent = "00:00"; return; }
+    sec--;
+    const m = String(Math.floor(sec / 60)).padStart(2, "0");
+    const s = String(sec % 60).padStart(2, "0");
+    el.textContent = m + ":" + s;
+    bar.style.width = (sec / total * 100) + "%";
+  }, 1000);
+  document.getElementById("btn-pay").onclick = () => {
+    if (window.showToast) {
+      window.showToast("Đang chuyển cổng thanh toán cọc (demo) — cửa hàng có 15 phút xác nhận đơn.");
+    }
+    setTimeout(function () {
+      if (window.motogoNavigate) window.motogoNavigate("my-orders.html"); else location.href = "my-orders.html";
+    }, 700);
+  };
+</script>
+</body>
+</html>

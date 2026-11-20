@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tìm xe · VRP-GO</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-container">
+    <a href="../index.html" class="logo"><span class="logo-mark" aria-hidden="true"><img src="../assets/logo-vrp.png" alt=""></span><span class="logo-text"><span class="vrp">VRP</span><span class="go">-GO</span></span></a>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="../index.html">Trang chủ</a></li>
+        <li><a href="../pages/vehicles.html" class="active">Thuê xe</a></li>
+        <li><a href="../pages/how-it-works.html">Cách hoạt động</a></li>
+        <li><a href="../pages/my-orders.html">Đơn của tôi</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-login">Đăng nhập</a>
+      <a href="register.html" class="btn btn-register">Đăng ký</a>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+    <div class="page-head">
+      <p class="breadcrumb"><a href="../index.html">Trang chủ</a> / Thuê xe</p>
+      <h1>Tìm xe còn trống</h1>
+      <p>Chỉ hiển thị xe trống toàn bộ khoảng thời gian bạn chọn. Lọc theo loại, giá, hãng.</p>
+    </div>
+
+    <form class="search-bar" style="margin-bottom:28px" action="vehicles.html" method="get">
+      <div class="field">
+        <label>Thành phố</label>
+        <select name="city">
+          <option selected>Đà Nẵng</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Ngày nhận</label>
+        <input type="datetime-local" name="pickup">
+      </div>
+      <div class="field">
+        <label>Ngày trả</label>
+        <input type="datetime-local" name="return">
+      </div>
+      <button type="submit" class="btn btn-primary">Áp dụng</button>
+    </form>
+
+    <div class="vehicle-layout">
+      <aside class="filter-panel">
+        <h3>Bộ lọc</h3>
+        <div class="filter-group">
+          <p>Loại xe</p>
+          <label><input type="checkbox" name="type" value="xe-may"> Xe máy</label>
+          <label><input type="checkbox" name="type" value="xe-dien"> Xe điện</label>
+          <label><input type="checkbox" name="type" value="o-to"> Ô tô</label>
+        </div>
+        <div class="filter-group">
+          <p>Giá / ngày</p>
+          <label><input type="radio" name="price" value="under-200"> Dưới 200k</label>
+          <label><input type="radio" name="price" value="mid-300"> 150k – 300k</label>
+          <label><input type="radio" name="price" value="over-300"> Trên 300k</label>
+        </div>
+        <div class="filter-group">
+          <p>Hãng</p>
+          <label><input type="checkbox" name="brand" value="honda"> Honda</label>
+          <label><input type="checkbox" name="brand" value="yamaha"> Yamaha</label>
+          <label><input type="checkbox" name="brand" value="vinfast"> VinFast</label>
+        </div>
+      </aside>
+
+      <div class="vehicle-results"
+        data-data-area data-target=".vehicle-grid" data-skeleton="cards" data-skeleton-count="4"
+        data-item=".vehicle-card"
+        data-empty-icon="🔍"
+        data-empty-title="Không tìm thấy xe phù hợp"
+        data-empty-text="Thử bỏ bớt bộ lọc hoặc chọn khoảng giá rộng hơn.">
+        <div class="vehicle-grid">
+        <article class="vehicle-card">
+          <div class="img-wrap">
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=80" alt="Vision">
+          </div>
+          <div class="body">
+            <p class="type">Xe máy · Tay ga</p>
+            <h3>Honda Vision 2024</h3>
+            <p class="meta">★ 4.9 (128) · Hải Châu, Đà Nẵng</p>
+            <div class="bottom">
+              <p class="price">150.000đ <span>/ ngày</span></p>
+              <div class="vehicle-actions">
+              <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
+              <a href="../khach-hang/calendar.html?xe=Honda%20Vision%202024" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="img-wrap">
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=700&q=80" alt="Janus">
+          </div>
+          <div class="body">
+            <p class="type">Xe máy · Tay ga</p>
+            <h3>Yamaha Janus 2023</h3>
+            <p class="meta">★ 4.8 · Đà Nẵng</p>
+            <div class="bottom">
+              <p class="price">160.000đ <span>/ ngày</span></p>
+              <div class="vehicle-actions">
+              <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
+              <a href="../khach-hang/calendar.html?xe=Yamaha%20Janus%202023" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="img-wrap">
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=700&q=80" alt="AB">
+          </div>
+          <div class="body">
+            <p class="type">Xe máy · Tay ga</p>
+            <h3>Honda Air Blade 160</h3>
+            <p class="meta">★ 4.9 · Đà Nẵng</p>
+            <div class="bottom">
+              <p class="price">180.000đ <span>/ ngày</span></p>
+              <div class="vehicle-actions">
+              <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
+              <a href="../khach-hang/calendar.html?xe=Honda%20Air%20Blade%20160" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="img-wrap">
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?auto=format&fit=crop&w=700&q=80" alt="Exciter">
+          </div>
+          <div class="body">
+            <p class="type">Xe máy · Côn tay</p>
+            <h3>Yamaha Exciter 155</h3>
+            <p class="meta">★ 4.8 · Đà Nẵng</p>
+            <div class="bottom">
+              <p class="price">220.000đ <span>/ ngày</span></p>
+              <div class="vehicle-actions">
+              <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
+              <a href="../khach-hang/calendar.html?xe=Yamaha%20Exciter%20155" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="img-wrap">
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80" alt="Feliz">
+          </div>
+          <div class="body">
+            <p class="type">Xe điện</p>
+            <h3>VinFast Feliz S</h3>
+            <p class="meta">★ 4.7 · Đà Nẵng</p>
+            <div class="bottom">
+              <p class="price">180.000đ <span>/ ngày</span></p>
+              <div class="vehicle-actions">
+              <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
+              <a href="../khach-hang/calendar.html?xe=VinFast%20Feliz%20S" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+            </div>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <div class="img-wrap">
+            <button type="button" class="favorite-btn" aria-label="Thêm vào xe yêu thích">♡</button>
+            <img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?auto=format&fit=crop&w=700&q=80" alt="SH">
+          </div>
+          <div class="body">
+            <p class="type">Xe máy · Cao cấp</p>
+            <h3>Honda SH 150i</h3>
+            <p class="meta">★ 4.9 · Đà Nẵng</p>
+            <div class="bottom">
+              <p class="price">280.000đ <span>/ ngày</span></p>
+              <div class="vehicle-actions">
+              <a href="vehicle-detail.html" class="btn btn-outline btn-sm">Chi tiết</a>
+              <a href="../khach-hang/payment.html" class="btn btn-ghost btn-sm btn-deposit-vrp">Đặt cọc</a>
+              <a href="../khach-hang/calendar.html?xe=Honda%20SH%20150i" class="btn btn-primary btn-sm btn-rent-vrp">Thuê xe</a>
+            </div>
+            </div>
+          </div>
+        </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">© 2026 VRP-GO</div>
+  </div>
+</footer>
+<script src="../js/effects.js"></script>
+<script src="../js/favorites.js"></script>
+<script>
+document.querySelectorAll(".btn-deposit-vrp, .btn-rent-vrp").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    const card = btn.closest(".vehicle-card");
+    const meta = card.querySelector(".meta").textContent.trim();
+    sessionStorage.setItem("selectedVehicleName", card.querySelector("h3").textContent.trim());
+    sessionStorage.setItem("selectedVehicleType", card.querySelector(".type").textContent.trim());
+    sessionStorage.setItem("selectedVehicleRating", meta);
+    sessionStorage.setItem("selectedVehicleSpecs", meta);
+    sessionStorage.setItem("selectedVehiclePrice", card.querySelector(".price").textContent.trim());
+    sessionStorage.setItem("selectedVehicleImage", card.querySelector("img").src);
+  });
+});
+
+/* Lọc xe theo loại, giá, hãng */
+(function () {
+  const grid = document.querySelector(".vehicle-grid");
+  const panel = document.querySelector(".filter-panel");
+  if (!grid || !panel) return;
+
+  const cards = Array.from(grid.querySelectorAll(".vehicle-card"));
+
+  function cardData(card) {
+    const type = (card.querySelector(".type")?.textContent || "").toLowerCase();
+    const name = (card.querySelector("h3")?.textContent || "").toLowerCase();
+    return {
+      type: type.includes("ô tô") ? "o-to" : type.includes("xe điện") ? "xe-dien" : "xe-may",
+      brand: name.includes("honda") ? "honda" : name.includes("yamaha") ? "yamaha" : name.includes("vinfast") ? "vinfast" : "",
+      price: Number((card.querySelector(".price")?.textContent || "").replace(/[^\d]/g, "")) || 0
+    };
+  }
+
+  function checkedValues(name) {
+    return Array.from(panel.querySelectorAll('input[name="' + name + '"]:checked')).map(function (input) {
+      return input.value;
+    });
+  }
+
+  function applyFilters() {
+    const types = checkedValues("type");
+    const brands = checkedValues("brand");
+    const priceInput = panel.querySelector('input[name="price"]:checked');
+    const price = priceInput ? priceInput.value : "";
+
+    cards.forEach(function (card) {
+      const data = cardData(card);
+      let match = true;
+
+      if (types.length && types.indexOf(data.type) === -1) match = false;
+      if (brands.length && brands.indexOf(data.brand) === -1) match = false;
+      if (price === "under-200" && data.price >= 200000) match = false;
+      if (price === "mid-300" && (data.price < 150000 || data.price > 300000)) match = false;
+      if (price === "over-300" && data.price <= 300000) match = false;
+
+      card.hidden = !match;
+    });
+
+    const area = grid.closest("[data-data-area]");
+    if (window.VRPDataState && area) window.VRPDataState.refresh(area);
+  }
+
+  panel.querySelectorAll("input").forEach(function (input) {
+    input.addEventListener("change", applyFilters);
+  });
+})();
+</script>
+</body>
+</html>

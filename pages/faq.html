@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câu hỏi thường gặp · VRP-GO</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    details.faq {
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(226,235,230,0.9);
+      padding: 4px 18px;
+      transition: box-shadow 0.25s;
+    }
+    details.faq[open] { box-shadow: var(--shadow); }
+    details.faq summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 0;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq summary::after {
+      content: "+";
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+    details.faq[open] summary::after { content: "−"; }
+    details.faq .ans {
+      padding: 0 0 16px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.65;
+      border-top: 1px solid #f0f4f2;
+      padding-top: 12px;
+    }
+  </style>
+</head>
+<body>
+<header class="header">
+  <div class="container header-container">
+    <a href="../index.html" class="logo"><span class="logo-mark" aria-hidden="true"><img src="../assets/logo-vrp.png" alt=""></span><span class="logo-text"><span class="vrp">VRP</span><span class="go">-GO</span></span></a>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="../index.html">Trang chủ</a></li>
+        <li><a href="../pages/vehicles.html">Thuê xe</a></li>
+        <li><a href="../pages/how-it-works.html">Cách hoạt động</a></li>
+        <li><a href="../pages/my-orders.html">Đơn của tôi</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-login">Đăng nhập</a>
+      <a href="register.html" class="btn btn-register">Đăng ký</a>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+    <div class="page-head">
+      <p class="breadcrumb"><a href="../index.html">Trang chủ</a> / <a href="help-center.html">Hỗ trợ</a> / FAQ</p>
+      <h1>Câu hỏi thường gặp</h1>
+      <p>Giải đáp nhanh trước khi đặt xe trên VRP-GO.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq" open>
+        <summary>Cần mang giấy tờ gì khi nhận xe?</summary>
+        <div class="ans">GPLX đúng hạng và CCCD/hộ chiếu. Nền tảng hướng tới xác minh online để hạn chế giữ bản gốc giấy tờ tại cửa hàng.</div>
+      </details>
+      <details class="faq">
+        <summary>Giữ chỗ 30 phút nghĩa là gì?</summary>
+        <div class="ans">Sau khi tạo đơn, xe bị khóa 30 phút để bạn thanh toán cọc. Hết hạn mà chưa thanh toán, đơn hủy và xe hiện lại cho người khác.</div>
+      </details>
+      <details class="faq">
+        <summary>Cửa hàng bao lâu thì xác nhận đơn?</summary>
+        <div class="ans">Trong 15 phút sau khi bạn thanh toán cọc. Quá hạn, bộ phận hỗ trợ sẽ xử lý theo quy trình.</div>
+      </details>
+      <details class="faq">
+        <summary>Hủy đơn có được hoàn cọc không?</summary>
+        <div class="ans">Hủy trước ≥ 24h: hoàn 100% cọc. Trong 6–24h: hoàn một phần. Dưới 6h: có thể mất cọc / chịu phí. Xem chi tiết tại <a href="rental-policy.html#huy" style="color:var(--primary);font-weight:600">Chính sách hủy</a>.</div>
+      </details>
+      <details class="faq">
+        <summary>Phí phát sinh được tính thế nào?</summary>
+        <div class="ans">Khi trả xe, hai bên đối chiếu ảnh giao/nhận, km và xăng. Phí xăng, hư hỏng, trả muộn chỉ áp dụng khi có minh chứng trên biên bản.</div>
+      </details>
+      <details class="faq">
+        <summary>Tôi có thể khiếu nại sau khi tất toán không?</summary>
+        <div class="ans">Có, trong 48 giờ sau tất toán. Gửi khiếu nại kèm ảnh; bộ phận hỗ trợ xem hồ sơ và ghi kết luận.</div>
+      </details>
+      <details class="faq">
+        <summary>Đặt xe mất bao lâu?</summary>
+        <div class="ans">Mục tiêu dưới 5 phút từ lúc tìm xe đến đặt thành công (giữ chỗ + thanh toán cọc), nếu cửa hàng xác nhận nhanh.</div>
+      </details>
+      <details class="faq">
+        <summary>VRP-GO đang hỗ trợ khu vực nào?</summary>
+        <div class="ans">VRP-GO hiện tập trung tại Đà Nẵng, với một cửa hàng tại 22/4 Lê Đình Dương, Quận Hải Châu.</div>
+      </details>
+      <details class="faq">
+        <summary>Liên hệ hỗ trợ bằng cách nào?</summary>
+        <div class="ans">Hotline <strong>1900 1234</strong> (8:00–22:00), email <strong>hello@vrpgo.vn</strong>, hoặc vào <a href="help-center.html" style="color:var(--primary);font-weight:600">Trung tâm trợ giúp</a>.</div>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="logo"><span class="logo-mark" aria-hidden="true"><img src="../assets/logo-vrp.png" alt=""></span><span class="logo-text"><span class="vrp">VRP</span><span class="go">-GO</span></span></a>
+        <p class="footer-about">Nền tảng thuê xe máy đáng tin cậy.</p>
+      </div>
+      <div>
+        <h4>Hỗ trợ</h4>
+        <a href="help-center.html">Trung tâm trợ giúp</a>
+        <a href="rental-policy.html">Chính sách thuê xe</a>
+        <a href="faq.html">Câu hỏi thường gặp</a>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <p class="footer-contact">hello@vrpgo.vn</p>
+        <p class="footer-contact">1900 1234</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 VRP-GO</div>
+  </div>
+</footer>
+<script src="../js/effects.js"></script>
+</body>
+</html>

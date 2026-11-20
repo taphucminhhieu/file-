@@ -1,0 +1,593 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #eaf1f3;
+}
+
+/* =================================================
+    MAIN CONTAINER
+================================================= */
+.auth {
+    position: relative;
+    width: min(920px, 100%);
+    height: 550px;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 18px 55px rgba(0, 44, 53, .12);
+}
+
+/* =================================================
+    FORMS (CONTAINER & ANIMATIONS)
+================================================= */
+.forms {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    transition: left .85s cubic-bezier(.68, -.1, .25, 1.1);
+}
+
+.auth.register-mode .forms {
+    left: 0;
+}
+
+.form {
+    position: absolute;
+    inset: 0;
+    padding: 55px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity .5s, transform .7s;
+}
+
+.form h1 {
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 30px;
+    color: #171717;
+}
+
+.form input {
+    width: 100%;
+    height: 43px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    border-radius: 9px;
+    background: #f0f1f2;
+    font-size: 14px;
+}
+
+.form input:focus {
+    box-shadow: 0 0 0 2px #00c9d5;
+}
+
+.password-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.password-group input {
+    margin-bottom: 0;
+    padding-right: 42px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    padding: 4px;
+    border-radius: 5px;
+    transition: color 0.2s, background 0.2s;
+}
+
+.toggle-password:hover {
+    color: #008d82;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.submit {
+    width: 100%;
+    height: 46px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(100deg, #003b48, #00d4df);
+    transition: .3s;
+}
+
+.submit:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+
+.login-form {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.register-form {
+    opacity: 0;
+    transform: translateX(35px);
+    pointer-events: none;
+}
+
+.auth.register-mode .login-form {
+    opacity: 0;
+    transform: translateX(-35px);
+    pointer-events: none;
+}
+
+.auth.register-mode .register-form {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+
+.forgot {
+    text-align: right;
+    font-size: 12px;
+    margin: -3px 0 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.message {
+    min-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #008d82;
+}
+
+/* =================================================
+    SWITCH PANEL & WELCOME TEXT
+================================================= */
+.switch-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    color: white;
+    background: linear-gradient(140deg, #003b48, #00d5df);
+    border-radius: 0 100px 100px 0;
+    z-index: 2;
+    overflow: hidden;
+    transition: left .85s cubic-bezier(.68, -.1, .25, 1.1), border-radius .85s;
+}
+
+.auth.register-mode .switch-panel {
+    left: 50%;
+    border-radius: 100px 0 0 100px;
+}
+
+.welcome {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    text-align: center;
+    transition: transform .85s cubic-bezier(.68, -.1, .25, 1.1), opacity .6s ease;
+    will-change: transform, opacity;
+}
+
+.welcome h2 {
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.welcome button {
+    min-width: 145px;
+    padding: 13px;
+    border: 1px solid white;
+    border-radius: 30px;
+    color: white;
+    background: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.welcome button:hover {
+    background: white;
+    color: #00545c;
+}
+
+
+.welcome-login {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.welcome-register {
+    opacity: 0;
+    transform: translateX(25%);
+    pointer-events: none;
+}
+
+.auth.register-mode .welcome-login {
+    opacity: 0;
+    transform: translateX(-25%);
+    pointer-events: none;
+}
+
+.auth.register-mode .welcome-register {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* =================================================
+    RESPONSIVE DESIGN: TABLET (601px - 1024px)
+================================================= */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .auth {
+        height: 510px;
+    }
+
+    .form {
+        padding: 40px 7%;
+    }
+
+    .form h1 {
+        font-size: 26px;
+    }
+
+    .welcome h2 {
+        font-size: 23px;
+    }
+
+    .welcome p {
+        font-size: 13px;
+    }
+
+    .switch-panel {
+        border-radius: 0 75px 75px 0;
+    }
+
+    .auth.register-mode .switch-panel {
+        border-radius: 75px 0 0 75px;
+    }
+}
+
+/* =================================================
+    RESPONSIVE DESIGN: MOBILE (max-width: 600px)
+================================================= */
+
+@media (max-width: 600px) {
+
+    .welcome {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;   
+        padding: 20px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .form h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .forgot {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =================================================
+    CUSTOM FORGOT PASSWORD MODAL
+================================================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 20, 26, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px 30px 30px;
+    box-shadow: 0 20px 50px rgba(0, 44, 53, 0.25);
+    transform: translateY(20px) scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-overlay.active .modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    line-height: 1;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.modal-close:hover {
+    color: #171717;
+    transform: scale(1.1);
+}
+
+.modal-card h2 {
+    font-size: 22px;
+    color: #171717;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.modal-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.modal-card input {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #e2e8f0;
+    outline: none;
+    border-radius: 10px;
+    background: #f7f9fa;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.modal-card input:focus {
+    background: #ffffff;
+    border-color: #00c9d5;
+    box-shadow: 0 0 0 3px rgba(0, 201, 213, 0.15);
+}
+
+.modal-message {
+    min-height: 22px;
+    font-size: 13px;
+    margin: 12px 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.modal-message.success {
+    color: #0d9488;
+}
+
+.modal-message.error {
+    color: #e11d48;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.modal-actions button {
+    flex: 1;
+    height: 44px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.modal-actions .btn-cancel {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.modal-actions .btn-cancel:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+.modal-actions .btn-submit {
+    background: linear-gradient(100deg, #003b48, #00d4df);
+    color: #ffffff;
+}
+
+.modal-actions .btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+.modal-actions .btn-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* =================================================
+    VRP-GO THEME (đồng bộ header/footer)
+================================================= */
+body.auth-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 100vh;
+    padding: 0;
+    font-family: 'Be Vietnam Pro', Arial, sans-serif;
+    background: var(--bg, #f5faf7);
+}
+
+.auth-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 20px;
+    background:
+        radial-gradient(ellipse at 18% 0%, rgba(7, 155, 112, 0.12), transparent 52%),
+        radial-gradient(ellipse at 82% 100%, rgba(13, 74, 56, 0.10), transparent 48%),
+        var(--bg, #f5faf7);
+}
+
+.auth {
+    box-shadow: 0 24px 60px rgba(13, 74, 56, 0.18);
+    border: 1px solid rgba(226, 235, 230, 0.9);
+}
+
+.form h1 {
+    color: var(--primary-dark, #0d4a38);
+}
+
+.form input {
+    background: #f2f7f4;
+    color: var(--text, #0f172a);
+}
+
+.form input:focus {
+    box-shadow: 0 0 0 2px rgba(7, 155, 112, 0.55);
+    background: #ffffff;
+}
+
+.toggle-password:hover {
+    color: #079b70;
+    background: rgba(7, 155, 112, 0.08);
+}
+
+.submit {
+    background: linear-gradient(120deg, #0d4a38 0%, #065f46 55%, #079b70 100%);
+    box-shadow: 0 10px 24px rgba(7, 155, 112, 0.28);
+}
+
+.submit:hover {
+    filter: none;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(7, 155, 112, 0.38);
+}
+
+.forgot {
+    color: #0d4a38;
+    font-weight: 600;
+}
+
+.forgot:hover {
+    color: #079b70;
+}
+
+.message {
+    color: #079b70;
+}
+
+.switch-panel {
+    background:
+        radial-gradient(circle at 85% 12%, rgba(134, 239, 172, 0.18), transparent 55%),
+        linear-gradient(150deg, #0d4a38 0%, #065f46 55%, #0b7a58 100%);
+}
+
+.welcome button {
+    border-color: rgba(255, 255, 255, 0.75);
+}
+
+.welcome button:hover {
+    background: #ffffff;
+    color: #0d4a38;
+}
+
+.modal-overlay {
+    background: rgba(6, 53, 40, 0.55);
+}
+
+.modal-card h2 {
+    color: #0d4a38;
+}
+
+.modal-card input:focus {
+    border-color: #079b70;
+    box-shadow: 0 0 0 3px rgba(7, 155, 112, 0.18);
+}
+
+.modal-message.success {
+    color: #079b70;
+}
+
+.modal-actions .btn-submit {
+    background: linear-gradient(120deg, #0d4a38 0%, #065f46 55%, #079b70 100%);
+}
+
+@media (max-width: 600px) {
+    .auth-main {
+        padding: 32px 16px;
+    }
+}

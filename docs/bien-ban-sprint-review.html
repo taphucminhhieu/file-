@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biên bản Sprint Review · VRP-GO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #079b70; --primary-dark: #0d4a38; --mint: #d1fae5; --text: #14243a; --muted: #64748b; --border: #e2ebe6; --bg: #f4f7f5; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Be Vietnam Pro", system-ui, sans-serif; background: var(--bg); color: var(--text); font-size: 14.5px; line-height: 1.65; padding: 32px 16px 48px; }
+    .sheet { max-width: 900px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 12px 40px rgba(13,74,56,0.1); overflow: hidden; }
+    .sheet-head { background: linear-gradient(135deg, #0d4a38, #079b70); color: #fff; padding: 28px 32px; }
+    .sheet-head .label { font-size: 11px; font-weight: 700; letter-spacing: 1px; opacity: 0.85; margin-bottom: 8px; }
+    .sheet-head h1 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+    .sheet-head p { opacity: 0.9; font-size: 14px; }
+    .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; padding: 20px 32px; background: #f8fbf9; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+    .meta strong { display: block; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 2px; }
+    .body { padding: 28px 32px 36px; }
+    h2 { font-size: 16px; font-weight: 800; color: var(--primary-dark); margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--mint); }
+    h2:first-child { margin-top: 0; }
+    h3 { font-size: 14.5px; font-weight: 700; margin: 16px 0 8px; }
+    p, li { margin-bottom: 8px; }
+    ul, ol { padding-left: 20px; margin-bottom: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 12px 0 16px; }
+    th, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background: #f0fdf7; font-weight: 700; font-size: 12px; color: var(--primary-dark); }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+    .tag-done { background: #d1fae5; color: #047857; }
+    .tag-wip { background: #fef3c7; color: #b45309; }
+    .tag-todo { background: #e2e8f0; color: #475569; }
+    .tag-block { background: #fee2e2; color: #b91c1c; }
+    .burndown { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 16px 0; align-items: end; height: 160px; padding: 12px; background: #f8fbf9; border-radius: 12px; border: 1px solid var(--border); }
+    .bar-wrap { display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 6px; }
+    .bar { width: 100%; max-width: 40px; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #34d399, #079b70); min-height: 4px; }
+    .bar-label { font-size: 11px; color: var(--muted); font-weight: 600; text-align: center; }
+    .note { background: #ecfdf5; border-left: 3px solid var(--primary); padding: 12px 14px; border-radius: 0 10px 10px 0; margin: 12px 0; font-size: 13.5px; }
+    .sign { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 32px; text-align: center; font-size: 13px; }
+    .sign .line { margin-top: 48px; border-top: 1px dashed var(--border); padding-top: 8px; color: var(--muted); }
+    .footer-doc { text-align: center; font-size: 12px; color: var(--muted); padding: 16px; border-top: 1px solid var(--border); }
+    code { font-size: 12.5px; background: #f1f5f4; padding: 1px 6px; border-radius: 4px; }
+    @media print { body { background: #fff; padding: 0; } .sheet { box-shadow: none; } }
+    @media (max-width: 640px) { .body, .sheet-head, .meta { padding-left: 18px; padding-right: 18px; } .sign { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="sheet-head">
+      <div class="label">DỰ ÁN VEHICLE RENTAL PLATFORM · VRP-GO</div>
+      <h1>Biên bản Sprint Review / Demo</h1>
+      <p>Demo đăng ký·đăng nhập · Rà soát công việc · Vướng mắc &amp; cải tiến · Cập nhật Burndown</p>
+    </div>
+    <div class="meta">
+      <div><strong>Ngày họp</strong>17/11/2026</div>
+      <div><strong>Hình thức</strong>Demo + Review</div>
+      <div><strong>Nhóm</strong>Nhóm phát triển VRP-GO (FE)</div>
+      <div><strong>Sprint</strong>Sprint MVP – Frontend</div>
+      <div><strong>Sản phẩm demo</strong>motogo/ (HTML·CSS·JS)</div>
+      <div><strong>Người ghi</strong>Nhóm FE</div>
+    </div>
+    <div class="body">
+      <h2>1. Mục tiêu buổi họp</h2>
+      <ul>
+        <li>Demo luồng <strong>Đăng ký / Đăng nhập</strong> trên giao diện khách.</li>
+        <li>Rà soát các hạng mục FE đã hoàn thành theo backlog (FR).</li>
+        <li>Ghi nhận vướng mắc, rủi ro và hành động cải tiến.</li>
+        <li>Cập nhật Burndown / tiến độ còn lại trước milestone demo cuối.</li>
+      </ul>
+
+      <h2>2. Demo Đăng ký / Đăng nhập</h2>
+      <h3>2.1. Phạm vi demo</h3>
+      <table>
+        <thead><tr><th>Màn hình</th><th>File</th><th>Kịch bản demo</th><th>Kết quả</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Đăng nhập</td><td><code>pages/login.html</code></td>
+            <td>Mở form → nhập email/mật khẩu (mock) → điều hướng</td>
+            <td><span class="tag tag-done">Demo OK</span></td>
+          </tr>
+          <tr>
+            <td>Đăng ký</td><td><code>pages/register.html</code></td>
+            <td>Form đăng ký khách · liên kết sang đăng nhập</td>
+            <td><span class="tag tag-done">Demo OK</span></td>
+          </tr>
+          <tr>
+            <td>Header CTA</td><td>Mọi trang</td>
+            <td>Nút Đăng nhập / Đăng ký trên header đồng bộ footer</td>
+            <td><span class="tag tag-done">OK</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note"><strong>Lưu ý:</strong> Prototype FE — chưa nối API/backend. Xác thực chỉ mang tính giao diện (mock). Cần nói rõ với PO/mentor khi trình bày.</div>
+      <h3>2.2. Phản hồi nhanh</h3>
+      <ul>
+        <li>Giao diện nhất quán VRP-GO (header/footer xanh đậm, logo VRP mint + GO trắng).</li>
+        <li>Cần validate form (email, mật khẩu tối thiểu) và thông báo lỗi rõ hơn.</li>
+        <li>Nên có trạng thái “đã đăng nhập” (avatar + tên) thống nhất trên trang khách.</li>
+      </ul>
+
+      <h2>3. Rà soát việc đã làm (FE)</h2>
+      <table>
+        <thead><tr><th>Mã / Hạng mục</th><th>Mô tả</th><th>Trạng thái</th></tr></thead>
+        <tbody>
+          <tr><td>FR-11</td><td>Trang chủ + tìm kiếm</td><td><span class="tag tag-done">Hoàn thành</span></td></tr>
+          <tr><td>FR-12</td><td>Danh sách xe + bộ lọc</td><td><span class="tag tag-done">Hoàn thành</span></td></tr>
+          <tr><td>FR-14</td><td>Chi tiết xe</td><td><span class="tag tag-done">Hoàn thành</span></td></tr>
+          <tr><td>FR-16/18</td><td>Tạo đơn / giữ chỗ / chi phí</td><td><span class="tag tag-done">Hoàn thành</span></td></tr>
+          <tr><td>FR-19</td><td>Cửa hàng xác nhận đơn (15 phút)</td><td><span class="tag tag-done">Hoàn thành</span></td></tr>
+          <tr><td>FR-21</td><td>Đơn của tôi</td><td><span class="tag tag-done">Hoàn thành</span></td></tr>
+          <tr><td>FR-06/07/09/34</td><td>Kho xe, giá, lịch tuần, doanh thu</td><td><span class="tag tag-done">Hoàn thành</span></td></tr>
+          <tr><td>FR-32/33</td><td>Khiếu nại + vận hành</td><td><span class="tag tag-done">Hoàn thành</span></td></tr>
+          <tr><td>FR-36</td><td>Duyệt hồ sơ</td><td><span class="tag tag-wip">Cần đồng bộ motogo</span></td></tr>
+          <tr><td>Hỗ trợ</td><td>Help center · Chính sách · FAQ</td><td><span class="tag tag-done">Hoàn thành</span></td></tr>
+          <tr><td>UX chung</td><td>Header/footer, fade, click, responsive</td><td><span class="tag tag-done">Hoàn thành</span></td></tr>
+          <tr><td>Auth thật</td><td>API đăng ký/đăng nhập</td><td><span class="tag tag-todo">Chưa (BE)</span></td></tr>
+        </tbody>
+      </table>
+
+      <h2>4. Vướng mắc &amp; rủi ro</h2>
+      <table>
+        <thead><tr><th>#</th><th>Vướng mắc</th><th>Mức</th><th>Ảnh hưởng</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Chưa có backend/API — dữ liệu mock tĩnh</td><td><span class="tag tag-block">Cao</span></td><td>Không demo E2E thanh toán / xác nhận thật</td></tr>
+          <tr><td>2</td><td>Một số FR còn file rời, chưa gộp hết vào motogo</td><td><span class="tag tag-wip">TB</span></td><td>Khó nộp một repo thống nhất</td></tr>
+          <tr><td>3</td><td>Login/register thiếu validation &amp; thông báo lỗi</td><td><span class="tag tag-wip">TB</span></td><td>Demo auth chưa “thật”</td></tr>
+          <tr><td>4</td><td>Ảnh Unsplash phụ thuộc mạng</td><td><span class="tag tag-todo">Thấp</span></td><td>Demo offline</td></tr>
+          <tr><td>5</td><td>Burndown theo dõi thủ công, chưa gắn tool</td><td><span class="tag tag-wip">TB</span></td><td>Báo cáo dễ lệch</td></tr>
+        </tbody>
+      </table>
+
+      <h2>5. Hành động cải tiến</h2>
+      <table>
+        <thead><tr><th>#</th><th>Hành động</th><th>Owner</th><th>Hạn</th></tr></thead>
+        <tbody>
+          <tr><td>A1</td><td>Validate + toast lỗi/thành công cho login &amp; register</td><td>FE</td><td>Trước demo kế tiếp</td></tr>
+          <tr><td>A2</td><td>Gộp FR rời (duyệt hồ sơ, biên bản) vào motogo + menu</td><td>FE</td><td>+3 ngày</td></tr>
+          <tr><td>A3</td><td>Mock user đã đăng nhập (localStorage) trên header</td><td>FE</td><td>+2 ngày</td></tr>
+          <tr><td>A4</td><td>Chốt contract API auth với BE</td><td>FE + BE</td><td>Cuối tuần</td></tr>
+          <tr><td>A5</td><td>Cập nhật burndown trên tool/sheet nhóm mỗi daily</td><td>SM / nhóm</td><td>Hàng ngày</td></tr>
+          <tr><td>A6</td><td>Ảnh local fallback cho demo offline</td><td>FE</td><td>Khi cần</td></tr>
+        </tbody>
+      </table>
+
+      <h2>6. Cập nhật Burndown</h2>
+      <p><strong>Giả định:</strong> 40 SP đầu sprint · 6 mốc theo dõi.</p>
+      <table>
+        <thead><tr><th>Mốc</th><th>Ideal còn (SP)</th><th>Thực tế còn (SP)</th><th>Ghi chú</th></tr></thead>
+        <tbody>
+          <tr><td>Ngày 0</td><td>40</td><td>40</td><td>Kickoff FE MVP</td></tr>
+          <tr><td>Mốc 1</td><td>32</td><td>30</td><td>Trang chủ, header/footer</td></tr>
+          <tr><td>Mốc 2</td><td>24</td><td>22</td><td>Tìm xe, chi tiết, booking</td></tr>
+          <tr><td>Mốc 3</td><td>16</td><td>14</td><td>Cửa hàng + lịch/kho/đơn</td></tr>
+          <tr><td>Mốc 4</td><td>8</td><td>9</td><td>Khiếu nại, hỗ trợ, polish</td></tr>
+          <tr><td><strong>Hiện tại</strong></td><td>5</td><td><strong>7</strong></td><td>Auth mock; còn gộp FR + validate + BE</td></tr>
+        </tbody>
+      </table>
+      <div class="burndown">
+        <div class="bar-wrap"><div class="bar" style="height:100%"></div><span class="bar-label">N0<br>40</span></div>
+        <div class="bar-wrap"><div class="bar" style="height:75%"></div><span class="bar-label">M1<br>30</span></div>
+        <div class="bar-wrap"><div class="bar" style="height:55%"></div><span class="bar-label">M2<br>22</span></div>
+        <div class="bar-wrap"><div class="bar" style="height:35%"></div><span class="bar-label">M3<br>14</span></div>
+        <div class="bar-wrap"><div class="bar" style="height:22%"></div><span class="bar-label">M4<br>9</span></div>
+        <div class="bar-wrap"><div class="bar" style="height:18%"></div><span class="bar-label">Now<br>7</span></div>
+      </div>
+      <div class="note"><strong>Nhận định:</strong> Sát ideal, chậm ~2 SP (auth/BE + gộp màn rời). Ưu tiên A1–A4 để kéo dưới 5 SP trước demo cuối.</div>
+
+      <h2>7. Kết luận &amp; bước tiếp</h2>
+      <ol>
+        <li>Chấp nhận demo FE đăng ký/đăng nhập ở mức giao diện; làm rõ với PO là chưa có API.</li>
+        <li>Ưu tiên validate form auth + gộp FR còn thiếu vào <code>motogo</code>.</li>
+        <li>Cập nhật burndown trên kênh nhóm sau daily; biên bản lưu tại <code>docs/bien-ban-sprint-review.html</code>.</li>
+        <li>Buổi sau: demo auth có validation + (nếu sẵn) 1 API login thử.</li>
+      </ol>
+
+      <div class="sign">
+        <div><div class="line">Nhóm trưởng / SM</div></div>
+        <div><div class="line">Đại diện FE</div></div>
+        <div><div class="line">PO / Mentor</div></div>
+      </div>
+    </div>
+    <div class="footer-doc">VRP-GO · Biên bản Sprint Review · 17/11/2026 · docs/bien-ban-sprint-review.html</div>
+  </div>
+</body>
+</html>
